@@ -41,7 +41,7 @@ OOPSIE
 
 		As pr information given in service section the is a login page in somewhere else.
 
-    ![Screenshot 2023-01-05 at 13 42 09](https://user-images.githubusercontent.com/49148722/211021666-9352141c-ac96-4299-89d3-ab855b30fe8f.png)
+![Screenshot 2023-01-05 at 13 42 09](https://user-images.githubusercontent.com/49148722/211022845-613191c7-9e93-46e0-b3f7-c208cbdd046f.png)
 
 		I search for sitemaps which we can see in Firefox inspect > Debugger or we can use burp suite tools to see site maps.
 
@@ -49,7 +49,7 @@ OOPSIE
 
 		we can visit login page by using these directory.
     
-    ![Screenshot 2023-01-05 at 14 10 12](https://user-images.githubusercontent.com/49148722/211021693-b3ae7dd6-14c1-4620-9858-0649dbf7a272.png)
+![Screenshot 2023-01-05 at 14 10 12](https://user-images.githubusercontent.com/49148722/211022868-d4ab059e-b017-4cc4-bba5-2cd0f9cea473.png)
 
 		I tried bunch of username/password credential to login but it wont worked. There is one more option to login as a guest 
 
@@ -61,18 +61,18 @@ OOPSIE
 
 		I went throw upload page but it only accessible by admin, so I looked at cookie to see if I can bypass admin cookie
     
-    ![Screenshot 2023-01-05 at 14 12 49](https://user-images.githubusercontent.com/49148722/211021790-a6b24b14-f55d-4fdf-a0a6-29c891d0f984.png)
+![Screenshot 2023-01-05 at 14 12 35](https://user-images.githubusercontent.com/49148722/211022896-c70f4a35-ce40-453a-bec7-639b26cfac21.png)
 
 		The cookies set with Role name and ID 
     
-    ![Screenshot 2023-01-05 at 14 12 35](https://user-images.githubusercontent.com/49148722/211021825-8949aff2-9fe1-4157-b265-084998b920b1.png)
+![Screenshot 2023-01-05 at 14 12 49](https://user-images.githubusercontent.com/49148722/211022917-cbb5ee0f-2a0e-4f67-8333-7b770cf21e7a.png)
 
 		I can try change the id variable to something else like for example 1 to see if we can enumerate the
 			users:
 			http://10.129.95.191/cdn-cgi/login/admin.php?content=accounts&id=1
 		I got an information disclosure vulnerability, which might be able to abuse. I have access ID and role name so, let's change in cookie and refresh.
     
-    ![Screenshot 2023-01-05 at 14 23 42](https://user-images.githubusercontent.com/49148722/211021900-fb0c571e-4062-4ddf-9c68-244b8453b36d.png)
+![Screenshot 2023-01-05 at 14 23 42](https://user-images.githubusercontent.com/49148722/211022957-9e30f3d7-d97d-4afd-840b-9881a26cea08.png)
 
 	task 4
 	What is the access ID of the admin user?
@@ -82,7 +82,7 @@ OOPSIE
 	task 5
 	On uploading a file, what directory does that file appear in on the server?
 		/uploads
-      ![Screenshot 2023-01-05 at 14 27 57](https://user-images.githubusercontent.com/49148722/211021941-1be3e49d-c438-44c5-904f-1835b4271dd4.png)
+![Screenshot 2023-01-05 at 14 27 57](https://user-images.githubusercontent.com/49148722/211023001-57ed3104-4eee-4214-a980-ee04408b333f.png)
 
 		 Now I have access of upload page so we can upload php reverse shell. we can create own reverse shell or we can use existing one.
 
@@ -93,7 +93,7 @@ OOPSIE
 
 		gobuster dir -u http://10.129.95.191/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt      
 
-    ![Screenshot 2023-01-05 at 15 29 21](https://user-images.githubusercontent.com/49148722/211022105-a1808247-ef1a-484a-a5c0-5e95b467cd1a.png)
+![Screenshot 2023-01-05 at 15 29 21](https://user-images.githubusercontent.com/49148722/211023056-32181c67-ac88-43a0-b879-6c9dedfc7e80.png)
 
 			I found /uploads on a result of gobuster.
 
@@ -101,13 +101,13 @@ OOPSIE
 
 		NC -lvvp 9009
     
-    ![Screenshot 2023-01-05 at 15 28 06](https://user-images.githubusercontent.com/49148722/211022021-2ba5bbe7-a3e9-4743-a6cf-ee8536f9c589.png)
+![Screenshot 2023-01-05 at 15 28 06](https://user-images.githubusercontent.com/49148722/211023068-cf4e54e6-f151-48f2-b935-f8541a440582.png)
 
 		Now I use url that I found throw gobuster http://10.129.95.191/uploads/shell.php
 
 		Finally I get connection on my listener port. In order to have a functional shell though we can issue the following:
     
-    ![Screenshot 2023-01-05 at 15 58 34](https://user-images.githubusercontent.com/49148722/211022140-80413fc7-901d-47dd-8ffe-7363b6542a9d.png)
+![Screenshot 2023-01-05 at 15 58 34](https://user-images.githubusercontent.com/49148722/211023097-4c94cafe-6c8b-4374-926a-7651e68c59c4.png)
 
 			python3 -c 'import pty;pty.spawn("/bin/bash")'
 
@@ -123,7 +123,7 @@ OOPSIE
 			if($_POST["username"]==="admin" && $_POST["password"]==="MEGACORP_4dm1n!!")
 			<input type="password" name="password" placeholder="Password" />
       
-      ![Screenshot 2023-01-05 at 16 09 03](https://user-images.githubusercontent.com/49148722/211022213-df93869f-7a48-477a-903b-a1e7f1dd7957.png)
+![Screenshot 2023-01-05 at 16 09 03](https://user-images.githubusercontent.com/49148722/211023142-f491c505-3faf-4435-8184-d350714afc79.png)
 
 		Lets find out root user in /etc/passwd directory. I found Robert
 
@@ -135,7 +135,7 @@ OOPSIE
 				$conn = mysql_connect('localhost','robert','M3g4C0rpUs3r!','garage');
 			?>
 
-      ![Screenshot 2023-01-05 at 16 09 20](https://user-images.githubusercontent.com/49148722/211022243-7ed09613-3b69-4bc3-b3e4-c9d8a28e4b69.png)
+![Screenshot 2023-01-05 at 16 09 20](https://user-images.githubusercontent.com/49148722/211023185-70ecf1ba-a261-4507-8991-11f6fd167371.png)
 
 			let's use it on Robert user.
 
@@ -154,8 +154,8 @@ OOPSIE
 
 			We check what privileges and what type of file is it:
 			ls -la /usr/bin/bugtracker && file /usr/bin/bugtracker
-      
-      ![Screenshot 2023-01-05 at 16 19 52](https://user-images.githubusercontent.com/49148722/211022303-95c21674-dec5-40d6-856f-d3817f2b9be7.png)
+      ![Screenshot 2023-01-05 at 16 19 52](https://user-images.githubusercontent.com/49148722/211023371-b3484003-be61-4452-be27-162102979d97.png)
+
 
 			There is a suit set on that binary, which is a promising exploitation path.
 
@@ -178,7 +178,7 @@ OOPSIE
 		Submit user flag
 
 			f2c74ee8db7983851ab2a96a44eb7981
-      ![Screenshot 2023-01-05 at 16 35 13](https://user-images.githubusercontent.com/49148722/211022370-468b1a92-6841-41da-b7f9-0dff0299bc1f.png)
+![Screenshot 2023-01-05 at 16 35 13](https://user-images.githubusercontent.com/49148722/211023404-7e515ef2-9ea3-4179-83d4-c4bc6f643f46.png)
 
 		task 12
 		Submit root flag
