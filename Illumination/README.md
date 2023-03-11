@@ -2,12 +2,13 @@ Challenge Lab: Forensics
    
    Difficulty: Easy
    
-    CHALLENGE DESCRIPTION
+   CHALLENGE DESCRIPTION
       "A Junior Developer just switched to a new source control platform. Can you find the secret token?"
-      
-    Zip Password: hackthebox
+   
+
+   Zip Password: hackthebox
     
-      Start by Downloading file and unzip with the password.
+   Start by Downloading file and unzip with the password.
       
                   total 20
             drwxr-xr-x 3 kali kali 4096 May 30  2019 .
@@ -16,8 +17,8 @@ Challenge Lab: Forensics
             -rw-r--r-- 1 kali kali  199 May 30  2019 config.json
             drwxr-xr-x 7 kali kali 4096 May 30  2019 .git
 
-       you can see there is hiddent file .get 
-       lets go in and check what we have..
+   you can see there is hiddent file .get 
+   lets go in and check what we have..
        
                        $ git log 
                   commit edc5aabf933f6bb161ceca6cf7d0d2160ce333ec (HEAD -> master)
@@ -45,9 +46,8 @@ Challenge Lab: Forensics
                       Moving to Git, first time using it. First Commit!
 
 
-      log directory has history of chnages from the junior develoer.
-      
-      Let’s focus on the one where the tokens were removed:
+   log directory has history of chnages from the junior develoer.
+   Let’s focus on the one where the tokens were removed:
       
                      git show 47241a47f62ada864ec74bd6dedc4d33f4374699
                commit 47241a47f62ada864ec74bd6dedc4d33f4374699
@@ -69,7 +69,7 @@ Challenge Lab: Forensics
                        "lightNum": "1337",
                        "username": "UmVkIEhlcnJpbmcsIHJlYWQgdGhlIEpTIGNhcmVmdWxseQ==",
                                                                             
-      decode it into base64 
+   decode it into base64 
       
       
       echo "SFRCe3YzcnNpMG5fYzBudHIwbF9hbV9JX3JpZ2h0P30=" | base64 -d
