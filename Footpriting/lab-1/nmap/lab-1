@@ -1,0 +1,34 @@
+sudo nmap -sCV 10.129.45.17 -p-
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-27 21:00 BST
+Nmap scan report for 10.129.45.17
+Host is up (0.034s latency).
+Not shown: 65531 closed tcp ports (reset)
+PORT     STATE SERVICE VERSION
+21/tcp   open  ftp     ProFTPD
+22/tcp   open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.2 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 3f4c8f10f1aebecd31247ca14eab846d (RSA)
+|   256 7b30376750b9ad91c08ff702783b7c02 (ECDSA)
+|_  256 889e0e07fecad05c60abcf1099cd6ca7 (ED25519)
+53/tcp   open  domain  ISC BIND 9.16.1 (Ubuntu Linux)
+| dns-nsid: 
+|_  bind.version: 9.16.1-Ubuntu
+2121/tcp open  ftp
+| fingerprint-strings: 
+|   GenericLines: 
+|     220 ProFTPD Server (Ceil's FTP) [10.129.45.17]
+|     Invalid command: try being more creative
+|     Invalid command: try being more creative
+|   SIPOptions: 
+|_    220 ProFTPD Server (Ceil's FTP) [10.129.45.17]
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port2121-TCP:V=7.93%I=7%D=4/27%Time=644AD46A%P=x86_64-pc-linux-gnu%r(Ge
+SF:nericLines,8C,"220\x20ProFTPD\x20Server\x20\(Ceil's\x20FTP\)\x20\[10\.1
+SF:29\.45\.17\]\r\n500\x20Invalid\x20command:\x20try\x20being\x20more\x20c
+SF:reative\r\n500\x20Invalid\x20command:\x20try\x20being\x20more\x20creati
+SF:ve\r\n")%r(SIPOptions,30,"220\x20ProFTPD\x20Server\x20\(Ceil's\x20FTP\)
+SF:\x20\[10\.129\.45\.17\]\r\n");
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 199.94 seconds
