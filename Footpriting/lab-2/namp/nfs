@@ -1,0 +1,50 @@
+# Nmap 7.93 scan initiated Sun Apr 30 07:52:01 2023 as: nmap -sV -p 111, -script nfs* -o nfs 10.129.202.41 2049
+Nmap scan report for 10.129.202.41
+Host is up (0.014s latency).
+
+PORT    STATE SERVICE VERSION
+111/tcp open  rpcbind 2-4 (RPC #100000)
+| rpcinfo: 
+|   program version    port/proto  service
+|   100000  2,3,4        111/tcp   rpcbind
+|   100000  2,3,4        111/tcp6  rpcbind
+|   100000  2,3,4        111/udp   rpcbind
+|   100000  2,3,4        111/udp6  rpcbind
+|   100003  2,3         2049/udp   nfs
+|   100003  2,3         2049/udp6  nfs
+|   100003  2,3,4       2049/tcp   nfs
+|   100003  2,3,4       2049/tcp6  nfs
+|   100005  1,2,3       2049/tcp   mountd
+|   100005  1,2,3       2049/tcp6  mountd
+|   100005  1,2,3       2049/udp   mountd
+|   100005  1,2,3       2049/udp6  mountd
+|   100021  1,2,3,4     2049/tcp   nlockmgr
+|   100021  1,2,3,4     2049/tcp6  nlockmgr
+|   100021  1,2,3,4     2049/udp   nlockmgr
+|   100021  1,2,3,4     2049/udp6  nlockmgr
+|   100024  1           2049/tcp   status
+|   100024  1           2049/tcp6  status
+|   100024  1           2049/udp   status
+|_  100024  1           2049/udp6  status
+| nfs-showmount: 
+|_  /TechSupport 
+| nfs-statfs: 
+|   Filesystem    1K-blocks   Used        Available   Use%  Maxfilesize  Maxlink
+|_  /TechSupport  41312252.0  16908360.0  24403892.0  41%   16.0T        1023
+| nfs-ls: Volume /TechSupport
+|   access: Read Lookup NoModify NoExtend NoDelete NoExecute
+| PERMISSION  UID         GID         SIZE   TIME                 FILENAME
+| rwx------   4294967294  4294967294  65536  2021-11-11T00:09:49  .
+| ??????????  ?           ?           ?      ?                    ..
+| rwx------   4294967294  4294967294  0      2021-11-10T15:19:28  ticket4238791283649.txt
+| rwx------   4294967294  4294967294  0      2021-11-10T15:19:28  ticket4238791283650.txt
+| rwx------   4294967294  4294967294  0      2021-11-10T15:19:28  ticket4238791283651.txt
+| rwx------   4294967294  4294967294  0      2021-11-10T15:19:28  ticket4238791283652.txt
+| rwx------   4294967294  4294967294  0      2021-11-10T15:19:28  ticket4238791283653.txt
+| rwx------   4294967294  4294967294  0      2021-11-10T15:19:28  ticket4238791283654.txt
+| rwx------   4294967294  4294967294  0      2021-11-10T15:19:29  ticket4238791283655.txt
+| rwx------   4294967294  4294967294  0      2021-11-10T15:19:29  ticket4238791283656.txt
+|_
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Apr 30 07:53:03 2023 -- 2 IP addresses (1 host up) scanned in 62.23 seconds
