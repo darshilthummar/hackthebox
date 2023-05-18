@@ -1,0 +1,42 @@
+# Nmap 7.93 scan initiated Wed May 17 07:09:53 2023 as: nmap -sCV --top-ports 1000 -o tcp.txt 10.129.202.20
+Nmap scan report for 10.129.202.20
+Host is up (0.017s latency).
+Not shown: 995 closed tcp ports (reset)
+PORT    STATE SERVICE  VERSION
+22/tcp  open  ssh      OpenSSH 8.2p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 3f4c8f10f1aebecd31247ca14eab846d (RSA)
+|   256 7b30376750b9ad91c08ff702783b7c02 (ECDSA)
+|_  256 889e0e07fecad05c60abcf1099cd6ca7 (ED25519)
+110/tcp open  pop3     Dovecot pop3d
+|_ssl-date: TLS randomness does not represent time
+|_pop3-capabilities: SASL(PLAIN) STLS PIPELINING RESP-CODES UIDL CAPA AUTH-RESP-CODE USER TOP
+| ssl-cert: Subject: commonName=NIXHARD
+| Subject Alternative Name: DNS:NIXHARD
+| Not valid before: 2021-11-10T01:30:25
+|_Not valid after:  2031-11-08T01:30:25
+143/tcp open  imap     Dovecot imapd (Ubuntu)
+| ssl-cert: Subject: commonName=NIXHARD
+| Subject Alternative Name: DNS:NIXHARD
+| Not valid before: 2021-11-10T01:30:25
+|_Not valid after:  2031-11-08T01:30:25
+|_imap-capabilities: AUTH=PLAINA0001 listed more have post-login ENABLE OK ID STARTTLS capabilities LOGIN-REFERRALS IDLE Pre-login SASL-IR LITERAL+ IMAP4rev1
+|_ssl-date: TLS randomness does not represent time
+993/tcp open  ssl/imap Dovecot imapd (Ubuntu)
+|_ssl-date: TLS randomness does not represent time
+|_imap-capabilities: AUTH=PLAINA0001 listed more post-login ENABLE OK ID have capabilities LOGIN-REFERRALS IDLE Pre-login SASL-IR LITERAL+ IMAP4rev1
+| ssl-cert: Subject: commonName=NIXHARD
+| Subject Alternative Name: DNS:NIXHARD
+| Not valid before: 2021-11-10T01:30:25
+|_Not valid after:  2031-11-08T01:30:25
+995/tcp open  ssl/pop3 Dovecot pop3d
+|_ssl-date: TLS randomness does not represent time
+|_pop3-capabilities: USER SASL(PLAIN) TOP CAPA AUTH-RESP-CODE PIPELINING RESP-CODES UIDL
+| ssl-cert: Subject: commonName=NIXHARD
+| Subject Alternative Name: DNS:NIXHARD
+| Not valid before: 2021-11-10T01:30:25
+|_Not valid after:  2031-11-08T01:30:25
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed May 17 07:10:10 2023 -- 1 IP address (1 host up) scanned in 17.14 seconds
