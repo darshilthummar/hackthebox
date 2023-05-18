@@ -177,12 +177,14 @@ save the key in machine and use to connect over ssh.
 note: before use in ssh chnage permission of the key with 600 
 
       ssh -i id_rsa tom@10.129.202.20
+
 ![Screenshot 2023-05-18 at 14 10 48](https://github.com/darshilthummar/hacethebox/assets/49148722/ac20b6cc-696d-47d2-ab5e-22cb1ef2a4bf)
 
 we are in!!!
 
 let find what we can find in the machine.
-    ![Screenshot 2023-05-18 at 14 12 11](https://github.com/darshilthummar/hacethebox/assets/49148722/b6888bdd-553e-489e-88d0-20b813e6ccb9)
+  
+ ![Screenshot 2023-05-18 at 14 12 11](https://github.com/darshilthummar/hacethebox/assets/49148722/b6888bdd-553e-489e-88d0-20b813e6ccb9)
 
 list of file is store in the machine, check one by one. I did find somting in .bash_history. 
 There is anothre key and some used mysql in the machine which means that MSQL would be the next scop to look.
@@ -194,7 +196,7 @@ so let check for MYSQL:
  
 i requre the password to login so i used same password that we found above.
 
-    ![Screenshot 2023-05-18 at 14 17 26](https://github.com/darshilthummar/hacethebox/assets/49148722/540ffa8e-343f-4009-9f9c-ac0e164db17d)
+ ![Screenshot 2023-05-18 at 14 17 26](https://github.com/darshilthummar/hacethebox/assets/49148722/540ffa8e-343f-4009-9f9c-ac0e164db17d)
 
 I got access of sql server.
   lets dig in.  
