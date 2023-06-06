@@ -1,5 +1,4 @@
 target IP :: 10.129.183.175
-
 let enumarate with nmap 
 		sudo nmap -sCV -T5 10.129.183.175 -oN sql.txt
 		Starting Nmap 7.92 ( https://nmap.org ) at 2022-10-23 15:00 EDT
